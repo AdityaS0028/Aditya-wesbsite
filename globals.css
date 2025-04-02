@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Arial:wght@400;700&family=Helvetica+Neue:wght@400;700;800&display=swap');
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 700;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    
+    /* Custom brand colors based on updated brand identity */
+    --beige-background: 39 14% 87%; /* #E8E6DD - Beige/Cream */
+    --black-text: 0 0% 7%; /* #121212 - Black */
+    --white-text: 0 0% 100%; /* #FFFFFF - White */
+    --accent-blue: 240 100% 50%; /* #0000FF - Subtle blue */
+    
+    /* System colors */
+    --sidebar-background: 39 14% 87%;
+    --sidebar-foreground: 0 0% 7%;
+    --sidebar-primary: 0 0% 7%;
+    --sidebar-primary-foreground: 39 14% 87%;
+    --sidebar-accent: 240 100% 50%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 80%;
+    --sidebar-ring: 240 100% 50%;
+    
+    --background: var(--beige-background);
+    --foreground: var(--black-text);
+    
+    --card: var(--beige-background);
+    --card-foreground: var(--black-text);
+    
+    --popover: var(--beige-background);
+    --popover-foreground: var(--black-text);
+    
+    --primary: var(--black-text);
+    --primary-foreground: var(--beige-background);
+    
+    --secondary: var(--black-text);
+    --secondary-foreground: var(--beige-background);
+    
+    --muted: var(--black-text);
+    --muted-foreground: var(--beige-background);
+    
+    --accent: var(--accent-blue);
+    --accent-foreground: var(--white-text);
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: var(--black-text);
+    --input: var(--black-text);
+    --ring: var(--accent-blue);
+    
+    --chart-1: 0 0% 7%; /* Black */
+    --chart-2: 39 14% 87%; /* Beige */
+    --chart-3: 240 100% 50%; /* Blue */
+    --chart-4: 0 0% 20%; /* Dark Gray */
+    --chart-5: 0 0% 96%; /* Light Gray */
+  }
+  
+  .dark {
+    --background: var(--black-text);
+    --foreground: var(--white-text);
+    
+    --card: var(--black-text);
+    --card-foreground: var(--white-text);
+    
+    --popover: var(--black-text);
+    --popover-foreground: var(--white-text);
+    
+    --primary: var(--beige-background);
+    --primary-foreground: var(--black-text);
+    
+    --secondary: var(--beige-background);
+    --secondary-foreground: var(--black-text);
+    
+    --muted: var(--beige-background);
+    --muted-foreground: var(--black-text);
+    
+    --accent: var(--accent-blue);
+    --accent-foreground: var(--white-text);
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: var(--beige-background);
+    --input: var(--beige-background);
+    --ring: var(--accent-blue);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.8s ease-in-out;
+}
+
+/* Custom utility classes */
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)));
+}
+
+.section-padding {
+  @apply py-16 md:py-24;
+}
+
+.container-custom {
+  @apply container mx-auto px-4 md:px-8;
+}
+
+/* Horizontal dividers */
+.divider {
+  @apply w-full h-px bg-black my-8;
+}
+
+/* Oversized typography for key messages */
+.text-oversized {
+  @apply text-4xl md:text-6xl lg:text-7xl font-bold leading-tight;
+}
+
+/* Better Off inspired spacing */
+.bo-spacing {
+  @apply my-16 md:my-24;
+}
